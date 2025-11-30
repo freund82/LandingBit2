@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ООО ЮА Бизнес и туризм - Горящие туры</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Откройте для себя мир незабываемых путешествий</h1>
+                <p class="hero-subtitle">Лучшие предложения для вашего идеального отдыха</p>
+                
+                <!-- Форма заявки -->
+                <div class="form-container">
+                    <h2 class="form-title">Заполните форму, чтобы получить выгодное предложение</h2>
+                    <form id="bookingForm" class="booking-form">
+                        <div class="form-group">
+                            <label for="name">Имя</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                       <div class="form-group">
+                           <label for="tel">Телефон</label>
+                            <input type="tel" id="tel" name="tel" placeholder="Телефон" required>
+                        </div>
+
+                        <div class="form-group">
+                        <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="email" required>
+                        </div>
+                        
+                        <!--<div class="form-group">
+                            <label for="date">Когда</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="people">Количество человек</label>
+                            <select id="people" name="people" required>
+                                <option value="">Выберите количество</option>
+                                <option value="1">1 Взрослый</option>
+                                <option value="2">1 Взрослый + 1 Ребенок</option>
+                                <option value="3">1 Взрослый + 2 Ребенка</option>
+                                <option value="4">2 Взрослых</option>
+                                <option value="5">2 Взрослых + 1 Ребенок</option>
+                                <option value="6">2 Взрослых + 2 Ребенка</option>
+                                <option value="7">3 Взрослых</option>
+                                <option value="8">3 Взрослых + 1 Ребенок</option>
+                                <option value="9">3 Взрослых + 2 Ребенка</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="metro">Ближайшая к Вам станция метро</label>
+                            <select id="metro" name="metro" required>
+                                <option value="">Выберите станцию</option>
+                                <option value="Авиамоторная (Калининско-Солнцевская)">Авиамоторная (Калининско-Солнцевская)</option>
+                                <option value="Авиамоторная (Третий пересадочный контур)">Авиамоторная (Третий пересадочный контур)</option>
+                                <option value="Автозаводская">Автозаводская</option>
+                                <option value="Академическая">Академическая</option>
+                                <option value="Алексеевская">Алексеевская</option>
+                                <option value="Алма-Атинская">Алма-Атинская</option>
+                                <option value="Аннино">Аннино</option>
+                                <option value="Арбатская">Арбатская</option>
+                                <option value="Аэропорт">Аэропорт</option>
+                                <option value="Бабушкинская">Бабушкинская</option>
+                                <option value="Багратионовская">Багратионовская</option>
+                                <option value="Баррикадная">Баррикадная</option>
+                                <option value="Бауманская">Бауманская</option>
+                                <option value="Беговая">Беговая</option>
+                                <option value="Белорусская">Белорусская</option>
+                                <option value="Беляево">Беляево</option>
+                                <option value="Бибирево">Бибирево</option>
+                                <option value="Библиотека им. Ленина">Библиотека им. Ленина</option>
+                                <option value="Битцевский парк">Битцевский парк</option>
+                                <option value="Борисово">Борисово</option>
+                                <option value="Боровицкая">Боровицкая</option>
+                                <option value="Ботанический сад">Ботанический сад</option>
+                                <option value="Братиславская">Братиславская</option>
+                                <option value="Бульвар Адмирала Ушакова">Бульвар Адмирала Ушакова</option>
+                                <option value="Бульвар Дмитрия Донского">Бульвар Дмитрия Донского</option>
+                                <option value="Бульвар Рокоссовского">Бульвар Рокоссовского</option>
+                                <option value="Бунинская аллея">Бунинская аллея</option>
+                                <option value="Варшавская">Варшавская</option>
+                                <option value="ВДНХ">ВДНХ</option>
+                                <option value="Владыкино">Владыкино</option>
+                                <option value="Водный стадион">Водный стадион</option>
+                                <option value="Войковская">Войковская</option>
+                                <option value="Волгоградский проспект">Волгоградский проспект</option>
+                                <option value="Волжская">Волжская</option>
+                                <option value="Волоколамская">Волоколамская</option>
+                                <option value="Воробьевы горы">Воробьевы горы</option>
+                                <option value="Выставочная">Выставочная</option>
+                                <option value="Выхино">Выхино</option>
+                                <option value="Динамо">Динамо</option>
+                                <option value="Дмитровская">Дмитровская</option>
+                                <option value="Добрынинская">Добрынинская</option>
+                                <option value="Домодедовская">Домодедовская</option>
+                                <option value="Дубровка">Дубровка</option>
+                                <option value="Жулебино">Жулебино</option>
+                                <option value="Зябликово">Зябликово</option>
+                                <option value="Измайловская">Измайловская</option>
+                                <option value="Калужская">Калужская</option>
+                                <option value="Кантемировская">Кантемировская</option>
+                                <option value="Каховская">Каховская</option>
+                                <option value="Каширская">Каширская</option>
+                                <option value="Киевская">Киевская</option>
+                                <option value="Китай-город">Китай-город</option>
+                                <option value="Кожуховская">Кожуховская</option>
+                                <option value="Коломенская">Коломенская</option>
+                                <option value="Комсомольская">Комсомольская</option>
+                                <option value="Коньково">Коньково</option>
+                                <option value="Красногвардейская">Красногвардейская</option>
+                                <option value="Краснопресненская">Краснопресненская</option>
+                                <option value="Красносельская">Красносельская</option>
+                                <option value="Красные Ворота">Красные Ворота</option>
+                                <option value="Крестьянская застава">Крестьянская застава</option>
+                                <option value="Кропоткинская">Кропоткинская</option>
+                                <option value="Крылатское">Крылатское</option>
+                                <option value="Кузнецкий мост">Кузнецкий мост</option>
+                                <option value="Кузьминки">Кузьминки</option>
+                                <option value="Кунцевская">Кунцевская</option>
+                                <option value="Курская">Курская</option>
+                                <option value="Кутузовская">Кутузовская</option>
+                                <option value="Ленинский проспект">Ленинский проспект</option>
+                                <option value="Лермонтовский проспект">Лермонтовский проспект</option>
+                                <option value="Лесопарковая">Лесопарковая</option>
+                                <option value="Ломоносовский проспект">Ломоносовский проспект</option>
+                                <option value="Лубянка">Лубянка</option>
+                                <option value="Люблино">Люблино</option>
+                                <option value="Марксистская">Марксистская</option>
+                                <option value="Марьина Роща">Марьина Роща</option>
+                                <option value="Марьино">Марьино</option>
+                                <option value="Маяковская">Маяковская</option>
+                                <option value="Медведково">Медведково</option>
+                                <option value="Международная">Международная</option>
+                                <option value="Менделеевская">Менделеевская</option>
+                                <option value="Митино">Митино</option>
+                                <option value="Молодежная">Молодежная</option>
+                                <option value="Мякинино">Мякинино</option>
+                                <option value="Нагатинская">Нагатинская</option>
+                                <option value="Нагорная">Нагорная</option>
+                                <option value="Нахимовский проспект">Нахимовский проспект</option>
+                                <option value="Новогиреево">Новогиреево</option>
+                                <option value="Новокосино">Новокосино</option>
+                                <option value="Новослободская">Новослободская</option>
+                                <option value="Новые Черемушки">Новые Черемушки</option>
+                                <option value="Октябрьская">Октябрьская</option>
+                                <option value="Октябрьское Поле">Октябрьское Поле</option>
+                                <option value="Орехово">Орехово</option>
+                                <option value="Отрадное">Отрадное</option>
+                                <option value="Охотный Ряд">Охотный Ряд</option>
+                                <option value="Павелецкая">Павелецкая</option>
+                                <option value="Парк культуры">Парк культуры</option>
+                                <option value="Парк Победы">Парк Победы</option>
+                                <option value="Партизанская">Партизанская</option>
+                                <option value="Первомайская">Первомайская</option>
+                                <option value="Перово">Перово</option>
+                                <option value="Петровско-Разумовская">Петровско-Разумовская</option>
+                                <option value="Печатники">Печатники</option>
+                                <option value="Пионерская">Пионерская</option>
+                                <option value="Планерная">Планерная</option>
+                                <option value="Площадь Ильича">Площадь Ильича</option>
+                                <option value="Площадь Революции">Площадь Революции</option>
+                                <option value="Полежаевская">Полежаевская</option>
+                                <option value="Полянка">Полянка</option>
+                                <option value="Пражская">Пражская</option>
+                                <option value="Преображенская площадь">Преображенская площадь</option>
+                                <option value="Пролетарская">Пролетарская</option>
+                                <option value="Проспект Вернадского">Проспект Вернадского</option>
+                                <option value="Проспект Мира">Проспект Мира</option>
+                                <option value="Профсоюзная">Профсоюзная</option>
+                                <option value="Пушкинская">Пушкинская</option>
+                                <option value="Пятницкое шоссе">Пятницкое шоссе</option>
+                                <option value="Речной вокзал">Речной вокзал</option>
+                                <option value="Рижская">Рижская</option>
+                                <option value="Римская">Римская</option>
+                                <option value="Рязанский проспект">Рязанский проспект</option>
+                                <option value="Савёловская">Савёловская</option>
+                                <option value="Свиблово">Свиблово</option>
+                                <option value="Севастопольская">Севастопольская</option>
+                                <option value="Семеновская">Семеновская</option>
+                                <option value="Серпуховская">Серпуховская</option>
+                                <option value="Славянский бульвар">Славянский бульвар</option>
+                                <option value="Смоленская">Смоленская</option>
+                                <option value="Сокол">Сокол</option>
+                                <option value="Сокольники">Сокольники</option>
+                                <option value="Спартак">Спартак</option>
+                                <option value="Спортивная">Спортивная</option>
+                                <option value="Сретенский бульвар">Сретенский бульвар</option>
+                                <option value="Строгино">Строгино</option>
+                                <option value="Студенческая">Студенческая</option>
+                                <option value="Сухаревская">Сухаревская</option>
+                                <option value="Сходненская">Сходненская</option>
+                                <option value="Таганская">Таганская</option>
+                                <option value="Тверская">Тверская</option>
+                                <option value="Театральная">Театральная</option>
+                                <option value="Текстильщики">Текстильщики</option>
+                                <option value="Теплый Стан">Теплый Стан</option>
+                                <option value="Тимирязевская">Тимирязевская</option>
+                                <option value="Третьяковская">Третьяковская</option>
+                                <option value="Тропарево">Тропарево</option>
+                                <option value="Трубная">Трубная</option>
+                                <option value="Тульская">Тульская</option>
+                                <option value="Тушинская">Тушинская</option>
+                                <option value="Улица 1905 года">Улица 1905 года</option>
+                                <option value="Улица Академика Королёва">Улица Академика Королёва</option>
+                                <option value="Улица Горчакова">Улица Горчакова</option>
+                                <option value="Улица Скобелевская">Улица Скобелевская</option>
+                                <option value="Улица Старокачаловская">Улица Старокачаловская</option>
+                                <option value="Университет">Университет</option>
+                                <option value="Филевский парк">Филевский парк</option>
+                                <option value="Фили">Фили</option>
+                                <option value="Фрунзенская">Фрунзенская</option>
+                                <option value="Царицыно">Царицыно</option>
+                                <option value="Цветной бульвар">Цветной бульвар</option>
+                                <option value="Черкизовская">Черкизовская</option>
+                                <option value="Чертановская">Чертановская</option>
+                                <option value="Чеховская">Чеховская</option>
+                                <option value="Чистые пруды">Чистые пруды</option>
+                                <option value="Чкаловская">Чкаловская</option>
+                                <option value="Шаболовская">Шаболовская</option>
+                                <option value="Шипиловская">Шипиловская</option>
+                                <option value="Шоссе Энтузиастов">Шоссе Энтузиастов</option>
+                                <option value="Щелковская">Щелковская</option>
+                                <option value="Щукинская">Щукинская</option>
+                                <option value="Электрозаводская">Электрозаводская</option>
+                                <option value="Юго-Западная">Юго-Западная</option>
+                                <option value="Южная">Южная</option>
+                                <option value="Ясенево">Ясенево</option>
+                            </select>
+                        </div>-->
+                        
+                        <div class="form-group">
+                            <label for="wishes">Ваши пожелания</label>
+                            <textarea id="wishes" name="wishes" rows="3" placeholder="Расскажите о ваших предпочтениях"></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span>Предоставляю согласие на обработку персональных данных </span>
+                            </label>
+                    
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span>Политика конфиденциальности </span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Отправить заявку</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Горящие предложения -->
+    <section class="hot-offers">
+        <div class="container">
+            <h2 class="section-title">Горящие предложения</h2>
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <div class="offer-badge">Горящий тур</div>
+                    <div class="offer-image" style="background-image: url('https://s.tez-tour.com/hotel/4060/01_Papillon-Zeugma-Drone-01__2__1800_middle.jpg')"></div>
+                    <div class="offer-content">
+                        <h3 class="offer-title">Турция, Анталья</h3>
+                        <p class="offer-description">Ультра все включено 24 часа</p>
+                        <div class="offer-details">
+                            <span class="offer-duration">7 ночей</span>
+                            <span class="offer-price">от 45 000 ₽</span>
+                        </div>
+                        <!--<button class="offer-btn">Подробнее</button>-->
+                    </div>
+                </div>
+
+                <div class="offer-card">
+                    <div class="offer-badge">Горящий тур</div>
+                    <div class="offer-image" style="background-image: url('https://s.tez-tour.com/hotel/7013104/1_1_Island_Pool_9375_middle.jpg')"></div>
+                    <div class="offer-content">
+                        <h3 class="offer-title">Египет, Хургада</h3>
+                        <p class="offer-description">Все включено, аквапарк и анимация</p>
+                        <div class="offer-details">
+                            <span class="offer-duration">7 ночей</span>
+                            <span class="offer-price">от 38 000 ₽</span>
+                        </div>
+                        <!--<button class="offer-btn">Подробнее</button>-->
+                    </div>
+                </div>
+
+                <div class="offer-card">
+                    <div class="offer-badge">Горящий тур</div>
+                    <div class="offer-image" style="background-image: url('https://s.tez-tour.com/hotel/4106/01_Jumeirah_Beach_Hotel_-_Architecture_-_Beach_-_Main_6298_middle.jpg')"></div>
+                    <div class="offer-content">
+                        <h3 class="offer-title">ОАЭ, Дубай</h3>
+                        <p class="offer-description">Роскошный отдых в лучших отелях</p>
+                        <div class="offer-details">
+                            <span class="offer-duration">5 ночей</span>
+                            <span class="offer-price">от 85 000 ₽</span>
+                        </div>
+                        <!--<button class="offer-btn">Подробнее</button>-->
+                    </div>
+                </div>
+
+                <div class="offer-card">
+                    <div class="offer-badge">Горящий тур</div>
+                    <div class="offer-image" style="background-image: url('https://s.tez-tour.com/hotel/7020396/01__3__5691_middle.jpg')"></div>
+                    <div class="offer-content">
+                        <h3 class="offer-title">Таиланд, Пхукет</h3>
+                        <p class="offer-description">Экзотический отдых на берегу океана</p>
+                        <div class="offer-details">
+                            <span class="offer-duration">10 ночей</span>
+                            <span class="offer-price">от 95 000 ₽</span>
+                        </div>
+                        <!--<button class="offer-btn">Подробнее</button>-->
+                    </div>
+                </div>
+
+                <div class="offer-card">
+                    <div class="offer-badge">Горящий тур</div>
+                    <div class="offer-image" style="background-image: url('https://s.tez-tour.com/hotel/30598/1_3843_middle.jpg')"></div>
+                    <div class="offer-content">
+                        <h3 class="offer-title">Вьетнам, Нячанг</h3>
+                        <p class="offer-description">Небоскребы и древняя история</p>
+                        <div class="offer-details">
+                            <span class="offer-duration">7 ночей</span>
+                            <span class="offer-price">от 65 000 ₽</span>
+                        </div>
+                        <!--<button class="offer-btn">Подробнее</button>-->
+                    </div>
+                </div>
+
+                <div class="offer-card">
+                    <div class="offer-badge">Горящий тур</div>
+                    <div class="offer-image" style="background-image: url('https://s.tez-tour.com/hotel/2509/DJI_0852__1__5829_middle.jpg')"></div>
+                    <div class="offer-content">
+                        <h3 class="offer-title">Шри-Ланка, Диквелла</h3>
+                        <p class="offer-description">Наслаждайтесь и удивляйтесь!</p>
+                        <div class="offer-details">
+                            <span class="offer-duration">7 ночей</span>
+                            <span class="offer-price">от 75 000 ₽</span>
+                        </div>
+                        <!--<button class="offer-btn">Подробнее</button>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section class="advantages">
+        <div class="container">
+            <h2 class="section-title">Почему выбирают нас</h2>
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <div class="advantage-icon">✈️</div>
+                    <h3>Опыт</h3>
+                    <p>Более 10 лет успешной работы в сфере туризма</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">🛡️</div>
+                    <h3>Надежность</h3>
+                    <p>Гарантия качества и полная поддержка клиентов</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">🌍</div>
+                    <h3>Выбор</h3>
+                    <p>Широкий выбор направлений от эконом до VIP</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">⭐</div>
+                    <h3>Качество</h3>
+                    <p>Только проверенные отели и надежные партнеры</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>ООО ЮА Бизнес и туризм</h3>
+                    <p class="footer-phone">Телефон: <a href="tel:+79637509709">+7 (963) 750-97-09</a></p>
+                    <p class="footer-hours">График работы: с 10:00 до 21:00 ежедневно</p>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 ООО ЮА Бизнес и туризм. Все права защищены.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно успешной отправки -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Спасибо за заявку!</h2>
+            <p>Мы свяжемся с вами в ближайшее время.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
