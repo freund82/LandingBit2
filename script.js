@@ -11,21 +11,17 @@ document.addEventListener('DOMContentLoaded', function () {
     // Получаем данные формы
     const formData = {
       name: document.getElementById('name').value,
-      contact: document.getElementById('contact').value,
-      date: document.getElementById('date').value,
-      people: document.getElementById('people').value,
-      metro: document.getElementById('metro').value,
-      wishes: document.getElementById('wishes').value,
-      newsletter: document.getElementById('newsletter').checked,
+      contact: document.getElementById('tel').value,
+      personalData: document.getElementById('personalData').checked,
+      confidence: document.getElementById('confidence').checked,
     };
 
     // Валидация
     if (
       !formData.name ||
       !formData.contact ||
-      !formData.date ||
-      !formData.people ||
-      !formData.metro
+      !formData.personalData ||
+      !formData.confidence
     ) {
       alert('Пожалуйста, заполните все обязательные поля');
       return;
@@ -70,31 +66,6 @@ document.addEventListener('DOMContentLoaded', function () {
       modal.style.display = 'none';
     }
   });
-
-  /*// Установка минимальной даты (сегодня)
-    const dateInput = document.getElementById('date');
-    const today = new Date().toISOString().split('T')[0];
-    dateInput.setAttribute('min', today);
-
-    // Обработка кнопок "Подробнее" в карточках предложений
-    const offerButtons = document.querySelectorAll('.offer-btn');
-    offerButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const card = this.closest('.offer-card');
-            const title = card.querySelector('.offer-title').textContent;
-            const price = card.querySelector('.offer-price').textContent;
-            
-            // Можно открыть модальное окно с деталями или прокрутить к форме
-            // Для простоты прокручиваем к форме
-            document.querySelector('.form-container').scrollIntoView({ 
-                behavior: 'smooth',
-                block: 'center'
-            });
-            
-            // Автозаполнение формы (опционально)
-            // document.getElementById('wishes').value = `Интересует предложение: ${title}, ${price}`;
-        });
-    });*/
 
   // Плавная прокрутка для якорных ссылок
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
