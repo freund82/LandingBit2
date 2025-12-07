@@ -1,0 +1,140 @@
+<?php
+/**
+ * @package     Joomla.Site
+ * @subpackage  com_landing
+ *
+ * @copyright   Copyright (C) 2025 ООО ЮА Бизнес и туризм. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ */
+
+defined('_JEXEC') or die;
+?>
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ООО ЮА Бизнес и туризм - Горящие туры</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Откройте для себя мир незабываемых путешествий</h1>
+                <p class="hero-subtitle">Лучшие предложения для вашего идеального отдыха</p>
+                
+                <!-- Форма заявки -->
+                <div class="form-container">
+                    <h2 class="form-title">Заполните форму, чтобы получить выгодное предложение</h2>
+                    <form id="bookingForm" class="booking-form">
+                        <div class="form-group">
+                            <label for="name">Имя</label>
+                            <input type="text" id="name" name="name" pattern="[А-Яа-яЁё\s\-]+" 
+           title="Введите имя русскими буквами" required>
+                        </div>
+                        
+                       <div class="form-group">
+                           <label for="tel">Телефон</label>
+                            <input type="tel" id="tel" name="tel" placeholder="Телефон" required>
+                        </div>
+
+                        <div class="form-group">
+                        <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="wishes">Ваши пожелания</label>
+                            <textarea id="wishes" name="wishes" rows="3" placeholder="Расскажите о ваших предпочтениях"></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="personalData" name="personalData">
+                                <span>Предоставляю согласие на обработку персональных данных </span>
+                            </label>
+                    
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="confidence" name="confidence">
+                                <span>Политика конфиденциальности </span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Отправить заявку</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Горящие предложения -->
+    <section class="hot-offers">
+        <div class="container">
+            <h2 class="section-title">Горящие предложения</h2>
+            <div class="tv-hot-tours tv-moduleid-9986677"></div>
+                <script type="text/javascript" src="//tourvisor.ru/module/init.js"></script>
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section class="advantages">
+        <div class="container">
+            <h2 class="section-title">Почему выбирают нас</h2>
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <div class="advantage-icon">✈️</div>
+                    <h3>Опыт</h3>
+                    <p>Более 10 лет успешной работы в сфере туризма</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">🛡️</div>
+                    <h3>Надежность</h3>
+                    <p>Гарантия качества и полная поддержка клиентов</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">🌍</div>
+                    <h3>Выбор</h3>
+                    <p>Широкий выбор направлений от эконом до VIP</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">⭐</div>
+                    <h3>Качество</h3>
+                    <p>Только проверенные отели и надежные партнеры</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>ООО ЮА Бизнес и туризм</h3>
+                    <p class="footer-phone">Телефон: <a href="tel:+79637509709">+7 (963) 750-97-09</a></p>
+                    <p class="footer-hours">График работы: с 10:00 до 21:00 ежедневно</p>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 ООО ЮА Бизнес и туризм. Все права защищены.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно успешной отправки -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Спасибо за заявку!</h2>
+            <p>Мы свяжемся с вами в ближайшее время.</p>
+        </div>
+    </div>
+
+    <script src="/assets/js/script.js"></script>
+</body>
+</html>
