@@ -2,7 +2,7 @@
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 
-$apiKey = 'HT9vnC3oK77mx9G04vLz1750575382';
+$apiKey = 'wHHm48J7Ncf8xO30oCw21765112461';
 $url = 'https://api.u-on.ru/' . $apiKey . '/lead/create.json';
 
 $data = file_get_contents('php://input');

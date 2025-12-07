@@ -4,14 +4,58 @@ document.addEventListener('DOMContentLoaded', function () {
   const modal = document.getElementById('successModal');
   const closeModal = document.querySelector('.close-modal');
 
+  // Функция для форматирования номера телефона
+  function formatPhone(phone) {
+    return phone
+      .replace(/\D/g, '')
+      .replace(/^(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})$/, '+$1 ($2) $3-$4-$5');
+  }
+
+  // Функция для отправки данных в CRM U-on Travel
+  async function sendToUonCRM(data) {
+    const managers = [10, 56, 42, 57, 13, 15, 41, 11, 7, 8];
+
+    const crmData = {
+      r_u_id: managers[Math.floor(Math.random() * managers.length)], // произвольный id менеджера
+      u_name: data.name,
+      u_phone: formatPhone(data.phone),
+      u_email: data.email,
+      requirements_note: data.wishes || 'Клиент оставил заявку на подбор тура',
+      source: 'bitLanding',
+      utm_source: 'btripgoLanding_site',
+    };
+
+    try {
+      const response = await fetch('./proxy.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest',
+        },
+        body: JSON.stringify(crmData),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      return await response.json();
+    } catch (error) {
+      console.error('Ошибка отправки в CRM:', error);
+      throw error;
+    }
+  }
+
   // Обработка отправки формы
-  form.addEventListener('submit', function (e) {
+  form.addEventListener('submit', async function (e) {
     e.preventDefault();
 
     // Получаем данные формы
     const formData = {
       name: document.getElementById('name').value,
-      contact: document.getElementById('tel').value,
+      phone: document.getElementById('tel').value,
+      email: document.getElementById('email').value,
+      wishes: document.getElementById('wishes').value,
       personalData: document.getElementById('personalData').checked,
       confidence: document.getElementById('confidence').checked,
     };
@@ -19,7 +63,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Валидация
     if (
       !formData.name ||
-      !formData.contact ||
+      !formData.phone ||
+      !formData.email ||
       !formData.personalData ||
       !formData.confidence
     ) {
@@ -27,32 +72,29 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
-    // Здесь можно отправить данные на сервер
-    console.log('Данные формы:', formData);
+    // Показываем сообщение о загрузке
+    const submitBtn = form.querySelector('.submit-btn');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Отправка...';
+    submitBtn.disabled = true;
 
-    // Показываем модальное окно успеха
-    modal.style.display = 'block';
+    try {
+      // Отправляем данные в CRM
+      const crmResponse = await sendToUonCRM(formData);
 
-    // Очищаем форму
-    form.reset();
+      // Показываем модальное окно успеха
+      modal.style.display = 'block';
 
-    // Можно отправить данные на сервер через fetch
-    // fetch('/api/booking', {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(formData)
-    // })
-    // .then(response => response.json())
-    // .then(data => {
-    //     modal.style.display = 'block';
-    //     form.reset();
-    // })
-    // .catch(error => {
-    //     console.error('Ошибка:', error);
-    //     alert('Произошла ошибка при отправке формы. Пожалуйста, попробуйте позже.');
-    // });
+      // Очищаем форму
+      form.reset();
+    } catch (error) {
+      console.error('Ошибка:', error);
+      alert('Произошла ошибка при отправке формы. Пожалуйста, попробуйте позже.');
+    } finally {
+      // Восстанавливаем кнопку
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    }
   });
 
   // Закрытие модального окна
